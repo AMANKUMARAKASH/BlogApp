@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import styles from "./singlePage.module.css";
 import { Suspense } from "react";
@@ -7,7 +8,7 @@ import { getPost } from "@/lib/data";
 // FETCH DATA WITH AN API
 const getData = async (slug) => {
   try {
-    const res = await fetch(`https://blog-three-nu-98.vercel.app/api/blog/${slug}`);
+    const res = await fetch(`https://blog-aman-nine.vercel.app/api/blog/${slug}`);
 
     if (!res.ok) {
       const errorData = await res.json();
