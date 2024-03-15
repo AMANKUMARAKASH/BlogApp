@@ -136,5 +136,5 @@ export const register = async (prevState, formData) => {
 
 export const handlelogout=async()=>{
     "use server";
-    await signIn("github");
+    await signOut("github");
 };
