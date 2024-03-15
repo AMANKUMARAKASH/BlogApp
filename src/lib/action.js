@@ -6,7 +6,7 @@ import { connectToDb } from "./utils";
 import { signIn, signOut } from "./auth";
 import bcrypt from "bcryptjs";
 
-export const addPost = async ( formData) => {
+export const addPost = async (prevState, formData) => {
     const { title, desc, slug, userId } = Object.fromEntries(formData);
     try {
         connectToDb();
@@ -43,7 +43,7 @@ export const deletePost = async (formData) => {
     }
 };
 
-export const addUser = async ( formData) => {
+export const addUser = async (prevState, formData) => {
     const { username, email, password, img } = Object.fromEntries(formData);
 
     try {
@@ -80,7 +80,7 @@ export const deleteUser = async (formData) => {
     }
 };
 
-export const register = async ( formData) => {
+export const register = async (prevState, formData) => {
     const { username, email, password, img, passwordRepeat } =
         Object.fromEntries(formData);
 
@@ -116,7 +116,7 @@ export const register = async ( formData) => {
         return { error: "Something went wrong!" };
     }
 };
- export const login =async (formData)=>{
+ export const login =async (prevState,formData)=>{
     const{username,password}=Object.fromEntries(formData);
     try{
         await signIn("credentials",{username,password});
@@ -136,5 +136,5 @@ export const register = async ( formData) => {
 
 export const handlelogout=async()=>{
     "use server";
-    await signOut("github");
+    await signIn("github");
 };
