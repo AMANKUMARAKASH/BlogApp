@@ -1,4 +1,4 @@
-import RegisterForm from "@/components/register/RegisterForm.js";
+import RegisterForm from "@/components/register/RegisterForm";
 import styles from "./register.module.css";
 
 
