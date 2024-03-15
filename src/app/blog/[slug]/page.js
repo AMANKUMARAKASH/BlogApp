@@ -8,7 +8,7 @@ import { getPost } from "@/lib/data";
 // FETCH DATA WITH AN API
 const getData = async (slug) => {
   try {
-    const res = await fetch(`https://blog-next-aman.netlify.app/api/blog/${slug}`);
+    const res = await fetch(`https://blog-aman-nine.vercel.app/api/blog/${slug}`);
 
     if (!res.ok) {
       const errorData = await res.json();
