@@ -8,7 +8,8 @@ import { getPost } from "@/lib/data";
 // FETCH DATA WITH AN API
 const getData = async (slug) => {
   try {
-    const res = await fetch( process.env.AUTH_URL +`/api/blog/${slug}`);
+    const apiUrl=process.env.AUTH_URL;
+    const res = await fetch( `${apiUrl}/api/blog/${slug}`);
 
     if (!res.ok) {
       const errorData = await res.json();
