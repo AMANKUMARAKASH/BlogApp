@@ -8,7 +8,7 @@ import { getPost } from "@/lib/data";
 // FETCH DATA WITH AN API
 const getData = async (slug) => {
   try {
-    const res = await fetch(`http://127.0.0.1:3000/api/blog/${slug}`);
+    const res = await fetch( process.env.AUTH_URL +`/api/blog/${slug}`);
 
     if (!res.ok) {
       const errorData = await res.json();
@@ -34,7 +34,7 @@ export const generateMetadata = async ({ params }) => {
     };
   } catch (error) {
     console.error("Error generating metadata:", error);
-    throw new Error("Failed to generate metadata");
+    throw new Error("Failed to generate metadata"); 
   }
 };
 
